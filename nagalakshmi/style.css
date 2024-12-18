@@ -1,0 +1,157 @@
+/* Reset and body styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #2a2a2a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Wrapper container */
+.wrapper {
+    text-align: center;
+    position: relative;
+}
+
+/* Styling for the cracker */
+.cracker {
+    display: inline-block;
+    position: relative;
+    background-color: #ffeb3b;
+    width: 200px;
+    height: 100px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: explode 2s forwards;
+}
+
+/* Cracker split animation */
+@keyframes explode {
+    0% {
+        width: 200px;
+        transform: scale(1);
+    }
+    50% {
+        width: 300px;
+        transform: scale(1.2);
+    }
+    100% {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+/* Inside wrapper to position left and right parts of cracker */
+.wrapper-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Left and right parts of the cracker */
+.left,
+.right {
+    width: 80px;
+    height: 80px;
+    background-color: #ff5733;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    animation: burst 1s ease-out forwards;
+}
+
+/* Left and right split animation */
+.left {
+    left: -20px;
+    animation-delay: 0.2s;
+}
+
+.right {
+    right: -20px;
+    animation-delay: 0.2s;
+}
+
+@keyframes burst {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* Stars/confetti effect */
+@keyframes confetti {
+    0% {
+        top: -50px;
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+    100% {
+        top: 100vh;
+        opacity: 0;
+        transform: rotate(360deg);
+    }
+}
+
+/* Confetti creation using pseudo-elements */
+.cracker::before,
+.cracker::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: #ff5733;
+    border-radius: 50%;
+    animation: confetti 2s infinite;
+}
+
+.cracker::before {
+    left: 20%;
+    animation-duration: 3s;
+    animation-delay: 0.5s;
+}
+
+.cracker::after {
+    left: 70%;
+    animation-duration: 3s;
+    animation-delay: 1s;
+}
+
+/* Text for Happy New Year */
+.message h1 {
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Fade-in effect for the message */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

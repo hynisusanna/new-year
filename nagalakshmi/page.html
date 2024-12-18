@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Happy New Year 2024!</title>
+    <style>
+        /* Resetting some default styles */
+        body, h1, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Setting up the body with a dark background and white text */
+        body {
+            background: linear-gradient(135deg, #4a90e2, #ff7e5f);
+            color:blueviolet;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Adding a nice animation to the text */
+        h1 {
+            font-size: 4em;
+            font-weight: bold;
+            animation: bounce 1s infinite alternate;
+        }
+
+        /* Defining the bouncing animation */
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-30px);
+            }
+        }
+
+        /* Styling for the message */
+        p {
+            font-size: 1.5em;
+            margin-top: 20px;
+            font-style: italic;
+            animation: fadeIn 2s ease-out;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* A festive star animation */
+        .star{
+            position: absolute;
+            top: 3%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3em;
+            color: yellow;
+            animation: starTwinkle 1.5s infinite alternate;
+        }
+
+        @keyframes .starTwinkle {
+            0% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="star"><img src="sky.jpg" height=900 width=1700 class="jpg"></div>
+    <h1>Happy New Year 2024!</h1>
+    <h3>Wishing you a year full of joy and happiness!</h3>
+</body>
+</html>
